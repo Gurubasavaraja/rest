@@ -1,11 +1,58 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    }
+  "data": {
+    "pk": "resource_utilization",
+  "sk": "draft",
+  "name": "Resource Utilization",
+  "description": "The number of hours of work assigned to a resource or group of resources as a percentage of their availability for a given period.",
+  "active": true,
+  "quantifiable": true,
+  "type": "ratio",
+  "class": "time",
+  "units": "%",
+  "positive": {
+    "up": true,
+    "depends_on": [
+      "booked#or#planned#hours"
+    ]
+  },
+  "negative": {
+    "down": true,
+    "depends_on": [
+      "actual#hours"
+    ]
+  },
+  "movement": {
+    "positive": "up",
+    "negative": "low"
+  },
+  "postitive_depends_on": [
+    "booked_or_planned_hours"
   ],
-  "profile": {
-    "name": "typicode"
+  "negative_depends_on": [
+    "actual_hours"
+  ],
+  "tags": [
+    "resource"
+  ],
+  "subjects": {
+    "industry": [
+      "cross_industry"
+    ],
+    "process": [
+      "program_management",
+      "resource_planning"
+    ]
+  },
+  "referenced": 24,
+  "other_names": [
+    "resource_usage",
+    "material_usage"
+  ],
+  "audit": {
+    "created_by": "kavya",
+    "created_date": "2020-06-01-02:45-UTC",
+    "updated_by": "anurag",
+    "updated_date": "2020-06-01-02:45-UTC"
+  }
   }
 }
